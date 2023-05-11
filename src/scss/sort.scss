@@ -1,0 +1,243 @@
+.sort {
+	@include adaptiv-mp(200, 62, 'margin-top');
+	// .sort-title
+	&-title {
+		line-height: 122.702703%; /* 227/185 */
+		text-align: center;
+		@include adaptiv-mpMIN(180, 73, 'font-size', 520);
+		@include adaptiv-mp(80, 40, 'margin-bottom');
+	}
+	&-job {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 20px;
+		column-gap: 24px;
+		margin-bottom: 80px;
+
+		@media (max-width: 740px) {
+			display: none;
+		}
+
+		&__select {
+			font-size: 20px;
+		}
+
+		&__form {
+			display: none;
+
+			@media (max-width: 740px) {
+				display: block;
+				@include adaptiv-mpMAX(40, 30, 'margin-bottom', 740);
+			}
+		}
+
+		li {
+			font-size: 14px;
+			line-height: 121.428571%; /* 17/14 */
+			border: 2px solid $mainColor;
+			border-radius: 29px;
+			flex-grow: 1;
+			text-align: center;
+			padding: 19px 30px;
+			transition: 0.3s ease;
+
+			&:hover {
+				color: #fff;
+				background-color: $fourColorHover;
+				border-color: transparent;
+			}
+	
+			&:active {
+				background-color: $fourColor;
+			}
+			// min-width: 145px;
+		}
+	}
+	// .sort-button
+	&-button {
+		width: fit-content;
+		margin: 0 auto;
+		padding: 22px 55px;
+		transition: 0.3s ease;
+		// text-align: center;
+
+		&:hover {
+			color: #fff;
+			background-color: $fourColorHover;
+			border-color: transparent;
+		}
+
+		&:active {
+			background-color: $fourColor;
+		}
+	}
+	// .sort__card
+	&__card {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: 60px;
+		@include adaptiv-mp(40, 30, 'column-gap');
+		@include adaptiv-mp(60, 30, 'row-gap');
+		// .sort__card li
+		li {
+			position: relative;
+			top: 0;
+			flex-basis: 46.5%;
+			// cursor: pointer;
+			// display: flex;
+			// flex-direction: column;
+			background-color: #fff;
+			border-radius: 20px;
+			border-radius: 20px;
+			overflow: hidden;
+			transition: 0.5s ease;
+
+			&:hover {
+				top: -5px;
+				box-shadow: 0px 15px 30px 0px rgba(34, 60, 80, 0.2);
+			}
+
+			@media (max-width: 720px) {
+				flex-basis: 100%;
+			}
+
+			a {
+				display: flex;
+				flex-direction: column;
+			}
+			// .sort__card div
+			div {
+				padding: 0 26px 41px 26px;
+			}
+
+			time, span {
+				color: #B7B8BC;
+			}
+			// .sort__card li time
+			time {
+				display: block;
+				margin-bottom: 20px;
+				font-size: 10px;
+				line-height: 120%; /* 12/10 */
+			}
+			// .sort__card li span
+			span {
+				display: block;
+				margin-bottom: 22px;
+				font-size: 18px;
+				line-height: 122.222222%; /* 22/18 */
+			}
+			// .sort__card li h3 p
+			h3,
+			p {
+				font-size: 25px;
+				line-height: 124%; /* 31/25 */
+			}
+			// .sort__card li img
+			img {
+				max-height: 233px;
+				// width: 100%;
+				// max-width: 360px;
+				height: auto;
+				object-fit: cover;
+				order: -1;
+				margin-bottom: 31px;
+			}
+		}
+	}
+}
+.choices {
+	// font-size: 20px;
+	color: #fff;
+	// choices__inner
+	&__inner {
+		background-color: $fourColor;
+		font-size: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		// padding-top: 0 !important;
+		// padding-bottom: 0 !important;
+		border: none;
+		min-height: 66px;
+		display: flex;
+		align-items: center;
+
+		
+	}
+	&__item {
+		// font-size: 20px !important;
+		text-align: center;
+	}
+}
+// .choices__list--single {
+// 	padding: 0;
+// }
+.choices__list {
+
+	&::-webkit-scrollbar {
+		width: 3px ;
+
+		&-track {
+			// background-color: #ADAEB5;
+			// background-color: red;
+		}
+		&-thumb {
+			background-color: #ADAEB5;
+			height: 55px;
+			border-radius: 3px;
+		}
+	}
+
+	&--dropdown {
+		background-color: #FAFAFA !important;
+		box-shadow: 0px 0px 20px #EEEEEE;
+		border: none !important;
+		top: calc(100% + 7px) !important;
+	}
+}
+
+.choices__list--dropdown, .choices__list[aria-expanded] {
+	border-top: none;
+}
+.choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+	font-size: 20px;
+	text-align: center;
+	padding-right: 10px;
+	color: $mainColor;
+	min-height: 66px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+	background-color: rgba($fourColor, 0.8);
+	color: #fff;
+	min-height: 66px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.choices[data-type*=select-one]::after {
+	content: "";
+	height: 12px;
+	width: 21px;
+	// border-style: none;
+	// border-color: none;
+	border-width: 0;
+	position: absolute;
+	right: 26px;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: 0;
+	pointer-events: none;
+	background-image: url('@img/sort/arrow.svg');
+	background-repeat: no-repeat;
+	transition: transform 0.5s ease;
+	
+}
+.choices[data-type*=select-one].is-open::after {
+	margin-top: 0;
+	// transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) scale(1, -1);
+}

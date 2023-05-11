@@ -1,0 +1,154 @@
+footer {
+	background-color: $mainColor;
+	color: $bodyColor;
+	padding: 58px 10px 44px 0;
+}
+.footer {
+	// .footer__top
+	&__top {
+		margin-bottom: 69px;
+		display: flex;
+		justify-content: space-between;
+		column-gap: 50px;
+		flex-wrap: wrap;
+
+		@media (max-width: 1000px) {
+			row-gap: 70px;
+			div,
+			ul {
+				min-width: fit-content;
+				// flex-basis: 50%;
+				flex-basis: fit-content;
+			}
+		}
+
+		ul,
+		.footer__top-logo {
+			
+		}
+		ul {
+		}
+		// .footer__top-logo
+		&-logo {
+			height: 100%;
+			@include adaptiv-mp(200, 100, 'width');
+			@include adaptiv-mp(200, 100, 'height');
+			flex-basis: fit-content !important;
+
+			img {
+				// width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	&__nav li, 
+	&__content li {
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+	// .footer__nav
+	&__nav {
+		// .footer__nav-item
+		&-item {
+		}
+	}
+	// .footer__content
+	&__content {
+		// .footer__content-list
+		&-list {
+		}
+	}
+	// .footer__search
+	&__search {
+		display: flex;
+		flex-direction: column;
+		
+		// .footer__search-social
+		&-social {
+			@include adaptiv-mp(30, 20, 'padding-top');
+		}
+	}
+	// .footer__social
+	&__social {
+		display: flex;
+		column-gap: 14px;
+		// .footer__social-item
+		&-item {
+			position: relative;
+			width: 38px;
+			height: 38px;
+			background-color: #FCFCFC;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background-color 0.3s ease, top 0.5s ease;
+
+			svg path {
+				transition: fill 0.3s ease;
+			}
+
+			&:hover {
+				top: -3px;
+
+				svg path {
+					fill: #fff;
+				}
+			}
+
+			a {
+				height: fit-content;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			// .footer__social-item
+			&--insta:hover {
+				background-color: #A06C6D;
+			}
+			// .footer__social--
+			&--vk:hover {
+				background-color: #0079FA;
+			}
+			// .footer__social--
+			&--youtube:hover {
+				background-color: #DF2528;
+			}
+			// .footer__social--
+			&--d2:hover {
+				background-color: #DF2528;
+			}
+		}
+	}
+	// .footer__copy
+	&__copy {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 115.3125%; /* 18.45/16 */
+
+		@media (max-width: 840px) {
+			flex-direction: column;
+			row-gap: 30px;
+			align-items: center;
+		}
+	}
+
+	.header {
+		// .header-form
+		&-form {
+		}
+	}
+	
+}
+.form {
+}
+.search-form--footer {
+	@media (max-width: 1000px) {
+		display: block;
+	}
+}

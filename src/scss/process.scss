@@ -1,0 +1,22 @@
+.process {
+	margin-bottom: 100px;
+
+	.container {
+		box-sizing: content-box;
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-mp(40, 30, 'row-gap');
+
+		p {
+			font-weight: 300;
+			font-size: 25px;
+			line-height: 116%; /* 29/25 */
+		}
+	}
+	
+}
+.container {
+}

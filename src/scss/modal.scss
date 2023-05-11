@@ -1,0 +1,126 @@
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	// top: 50%;
+	// left: 0;
+	// right: 0;
+	width: 100%;
+	height: 100vh;
+	// transform: translateY(-50%);
+	// background-color: $mainColor;
+	color: #fff;
+	z-index: 15;
+	overflow: auto;
+	display: flex;
+	background-color: rgba(254, 254, 254, 0.9);
+	// flex-direction: column;
+	// justify-content: center;
+	@media (max-width: 740px) {
+		text-align: center;
+	}
+
+	&.hide {
+		display: none;
+	}
+	// .modal-content
+	&-content {
+		background-color: $mainColor;
+		@include adaptiv-mp(72, 50, 'padding-top');
+		@include adaptiv-mp(72, 50, 'padding-bottom');
+	}
+
+	.container {
+		// width: 100%;
+		// background-color: $mainColor;
+		// @include adaptiv-mp(72, 50, 'padding-top');
+		// @include adaptiv-mp(72, 50, 'padding-bottom');
+		// margin: 0;
+	}
+	
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100%;
+		// overflow: auto;
+		// align-self: center;
+		height: fit-content;
+		width: 100%;
+		position: relative;
+		// top: 50%;
+		// transform: translateY(-50%);
+		// background-color: $mainColor;
+		// @include adaptiv-mp(72, 50, 'padding-top');
+		// @include adaptiv-mp(72, 50, 'padding-bottom');
+	}
+	// .modal-form
+	&-form {
+		display: flex;
+		column-gap: 40px;
+		@include adaptiv-mp(90, 65, 'padding-top');
+		@include adaptiv-mp(90, 65, 'padding-bottom');
+
+		@media (max-width: 840px) {
+			flex-direction: column;
+			@include adaptiv-mpMAX(40, 35, 'row-gap', 840);
+		}
+
+		input,
+		button {
+			flex-grow: 1;
+		}
+
+		input {
+			color: $secondColor;
+			padding-bottom: 22px;
+			border-bottom: 2px solid $bodyColor;
+		}
+
+		button {
+			background-color: $fourColor;
+			padding: 22px 0;
+		}
+	}
+	// .modal-button
+	p,
+	span {
+		line-height: 122%; /* 61/50 */
+		@include adaptiv-font(50, 27);
+	}
+
+	span {
+		color: $fourColor;
+	}
+	// .modal-close
+	&-close {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30px;
+		height: 30px;
+		margin-left: auto;
+		margin-bottom: 10px;
+		cursor: pointer;
+		// .app__modal .app-button span
+		span {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 40px;
+			height: 3px;
+			background-color: #fff;
+			// transform: translateX(50%);
+			// .app__modal .app-button span:nth-child(1)
+			&:nth-child(1) {
+				transform: rotate(-135deg) translate(4px, -24px);
+			}
+			// .app__modal .app-button span:nth-child(1)
+			&:nth-child(2) {
+				transform: rotate(135deg) translate(24px, 4px);
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+.app {
+	background-color: $mainColor;
+	color: #fff;
+	@include adaptiv-mp(72, 50, 'padding-top');
+	@include adaptiv-mp(72, 50, 'padding-bottom');
+
+	@media (max-width: 740px) {
+		text-align: center;
+	}
+	p,
+	span {
+		line-height: 122%; /* 61/50 */
+		@include adaptiv-font(50, 27);
+	}
+
+	span {
+		color: $fourColor;
+	}
+
+	&-button {
+		background-color: $fourColor;
+		padding: 22px 0;
+	}
+	
+	.form {
+		display: flex;
+		column-gap: 40px;
+		@include adaptiv-mp(90, 65, 'padding-top');
+		@include adaptiv-mp(90, 65, 'padding-bottom');
+
+		@media (max-width: 840px) {
+			flex-direction: column;
+			@include adaptiv-mpMAX(40, 35, 'row-gap', 840);
+		}
+
+		input,
+		button {
+			flex-grow: 1;
+		}
+
+		input {
+			color: $secondColor;
+			padding-bottom: 22px;
+			border-bottom: 2px solid $bodyColor;
+		}
+	}
+}
+
